@@ -1,7 +1,7 @@
 package zoo;
 
-public class LimiteVisiteurException extends Exception {
-    public LimiteVisiteurException(String message) {
+public class LimitVisitorException extends Exception {
+    public LimitVisitorException(String message) {
         super(message);
     }
 }

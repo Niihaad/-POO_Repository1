@@ -11,9 +11,9 @@ public class Secteur {
         this.animauxDansSecteur = new ArrayList<>();
     }
 
-    public void ajouterAnimal(Animal animal) throws AnimalDansMauvaisSecteurException {
+    public void ajouterAnimal(Animal animal) throws AnimalInWrongSectorException {
         if (animal.getTypeAnimal() != typeAnimauxDansSecteur) {
-            throw new AnimalDansMauvaisSecteurException("Animal dans le mauvais secteur !");
+            throw new AnimalInWrongSectorException("Animal dans le mauvais secteur !");
         }
         animauxDansSecteur.add(animal);
     }

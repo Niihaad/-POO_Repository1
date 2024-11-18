@@ -20,9 +20,9 @@ public class Zoo {
         this.nbVisiteurMaxParSecteur = nbVisiteurMaxParSecteur;
     }
 
-    public void nouveauVisiteur() throws LimiteVisiteurException {
+    public void nouveauVisiteur() throws LimitVisitorException {
         if (visiteurs >= nbVisiteurMaxParSecteur * secteursAnimaux.size()) {
-            throw new LimiteVisiteurException("Nombre maximum de visiteurs dépassé !");
+            throw new LimitVisitorException("Nombre maximum de visiteurs dépassé !");
         }
         visiteurs++;
     }
@@ -31,14 +31,14 @@ public class Zoo {
         return nbVisiteurMaxParSecteur * secteursAnimaux.size();
     }
 
-    public void nouvelAnimal(Animal animal) throws AnimalDansMauvaisSecteurException {
+    public void nouvelAnimal(Animal animal) throws AnimalInWrongSectorException {
         for (Secteur secteur : secteursAnimaux) {
             if (secteur.obtenirType() == animal.getTypeAnimal()) {
                 secteur.ajouterAnimal(animal);
                 return;
             }
         }
-        throw new AnimalDansMauvaisSecteurException("L'animal est dans le mauvais secteur !");
+        throw new AnimalInWrongSectorException("L'animal est dans le mauvais secteur !");
     }
 
     public int nombreAnimaux() {
