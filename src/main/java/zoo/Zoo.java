@@ -22,7 +22,7 @@ public class Zoo {
 
     public void nouveauVisiteur() throws LimitVisitorException {
         if (visiteurs >= nbVisiteurMaxParSecteur * secteursAnimaux.size()) {
-            throw new LimitVisitorException("Nombre maximum de visiteurs dépassé !");
+            throw new LimitVisitorException("Fait attention ,Nombre maximum de visiteurs dépassé !");
         }
         visiteurs++;
     }
@@ -38,7 +38,7 @@ public class Zoo {
                 return;
             }
         }
-        throw new AnimalInWrongSectorException("L'animal est dans le mauvais secteur !");
+        throw new AnimalInWrongSectorException("Fait attention ,L'animal est dans le mauvais secteur !");
     }
 
     public int nombreAnimaux() {
